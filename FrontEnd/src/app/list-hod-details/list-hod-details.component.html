@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <h1 class="title" style="text-align:center"><b><i>HOD Details</i></b></h1>
+    <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+    [dtTrigger]="dtTrigger">
+      <tr>
+          <th>HOD Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Qualification</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Address</th>
+          <th>Action</th>
+          </tr>
+      <tr *ngFor="let hodPersonalDetails of hodPersonalDetailsList">
+            <td>{{hodPersonalDetails.id}}</td>
+            <td>{{hodPersonalDetails.firstName}}</td>
+            <td>{{hodPersonalDetails.lastName}}</td>
+            <td>{{hodPersonalDetails.dateOfBirth}}</td>
+            <td>{{hodPersonalDetails.gender}}</td>
+            <td>{{hodPersonalDetails.qualification}}</td>
+            <td>{{hodPersonalDetails.email}}</td>
+            <td>{{hodPersonalDetails.contactNo}}</td>
+            <td>{{hodPersonalDetails.address}}</td>
+            <td><button (click)="deleteHodDetails(hodPersonalDetails.id)" class="btn btn-primary">Delete</button></td>
+            <td><button (click)="updateDetails(hodPersonalDetails.id)" class="btn btn-primary">Update</button></td>
+      </tr>
+      </table>
+    </div>
+   

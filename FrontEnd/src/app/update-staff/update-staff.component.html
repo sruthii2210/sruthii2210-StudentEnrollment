@@ -1,0 +1,75 @@
+
+<div class="container-fluid mb-3">
+    <h1 class="title"><b><i>Staff Update Form</i></b></h1>
+    <form (ngSubmit)="onSubmit()">
+        <!--input type="hidden" required  class="form-control" name="id" formControlName="id">-->
+    <table class="table table-hover table-sm">
+        <tr>
+            <th>Staff ID</th>
+            <td><input type="number"  value={{loginId}} required  ></td>
+        </tr>
+    <tr>
+        <th>First Name</th>
+        <td><input type="text" class="form-control" name="firstName"  [(ngModel)]=" staffSignup.firstName" required></td>
+    </tr>
+  
+    <tr>
+        <th><label>Last Name</label></th>
+        <td><input type="text" class="form-control" name="lastName"  [(ngModel)]=" staffSignup.lastName" required></td>
+    </tr>
+  
+      <tr>
+        <th><label>Date of Birth</label></th>
+        <td><input type="date" class="form-control" name="dob" [(ngModel)]=" staffSignup.dateOfBirth" required></td>
+      </tr>
+  
+      <tr>
+        <th rowspan="2"><label>Gender</label></th>
+        <td>
+          <input type="radio" name="gender" value="Male" [(ngModel)]=" staffSignup.gender">
+          <label>Male</label>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="radio" name="gender"  value="Female" [(ngModel)]=" staffSignup.gender">
+          <label>Female</label>
+        </td>
+      </tr>
+  
+      <tr>
+        <th>Qualification</th>
+        <td><select class="custom-select" style="height: 35px;" name="qualification" [(ngModel)]=" staffSignup.qualification">
+          <option value="" selected>Select ur qualification</option>
+          <option>Ph.D</option>
+          <option>M.Tech</option>
+        </select></td>
+      </tr>
+  
+      <tr>
+        <th><label>Email</label></th>
+       <td><input type="email" class="form-control" name="email" required [(ngModel)]=" staffSignup.email"></td>
+      </tr>
+  
+      <tr>
+        <th><label>Contact Number</label></th>
+        <td><input type="tel" class="form-control"  required  name="contactNo"  [(ngModel)]=" staffSignup.contactNo"></td>
+      </tr>
+  
+      <tr>
+        <th><label>Address</label></th>
+        <td><textarea rows="5" cols="50" class="form-control" name="address" [(ngModel)]=" staffSignup.address"></textarea></td>
+      </tr>
+  
+    
+        
+  
+      <tr>
+        <td></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success" type="submit">Submit</button>&nbsp;<button class="btn btn-success" type="reset">Reset</button></td>
+    </tr>
+   
+    </table>
+    </form>
+    </div>

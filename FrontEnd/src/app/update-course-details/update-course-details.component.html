@@ -1,0 +1,59 @@
+<div class="container-fluid mb-3">
+    <h1 class="title"><b><i>Course Update Form</i></b></h1>
+    <form (ngSubmit)="onSubmit()">
+        <table>
+            
+            <tr>
+                <th><label>Course Name</label></th>
+                <td><input type="text" class="form-control" name="courseName"  [(ngModel)]="course.courseName" required></td>
+            </tr>
+            <tr>
+                <th>Semester</th>
+                <td><select class="custom-select" style="height: 35px" name="semester" [(ngModel)]="course.semester">
+                  <option value="">Select Your Semester</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  </select></td>
+            </tr>
+              <tr>
+                <th>Department</th>
+                <td><select class="custom-select" style="height: 35px" name="department" [(ngModel)]="course.deptId">
+                  <option value="">Select Your Department</option>
+                  <option>21</option>
+                  <option>22</option>
+                  <option>23</option>
+                  <option>24</option>
+                  <option>25</option>
+                  <option>26</option>
+                  <option>27</option>
+                  <option>28</option>
+                  <option>29</option>
+                  <!--<option>Aeronautical Engineering</option>
+                  <option>Automobile Engineering</option>
+                  <option>Computer Science Engineering</option>
+                  <option>Electronics and Communication Engineering</option>
+                  <option>Electronics and Instrumentation Engineering</option>
+                  <option>Information Technology</option>
+                  <option>Production Technology</option> 
+                  <option>Mechanical Engineering</option> 
+                  <option>Rubber and Plastics Technology</option> -->
+                </select></td>
+              </tr>
+          
+              <tr>
+                <td></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-success" type="submit">Update</button>&nbsp;<button class="btn btn-danger" type="reset">Cancel</button></td>
+            </tr>
+           
+   
+    </table>
+    </form>
+    </div>
+

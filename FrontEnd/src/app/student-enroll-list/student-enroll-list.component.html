@@ -1,0 +1,45 @@
+
+<h3 style="text-align: center;" class="title"><i>View Enrolled Student List</i></h3>
+<form [formGroup]="StudentDetailsForm"  (ngSubmit)="onSubmit()">
+<table class="table table-hover table-sm">
+<tr>
+    <th>StaffId</th>
+    <td><input type="number" value={{loginId}} required  ></td>
+</tr>
+
+<tr>
+    <th>course Code</th>
+    <td>
+        <select (focus)="getCourse()" class="custom-select" style="height: 35px" name="courseCode" formControlName="courseCode">
+          <option value="">Select Course</option>
+          <option *ngFor="let course of courseDetails">{{course}}</option>
+        </select>
+        </td>
+    </tr>
+
+<tr>
+  <td></td>
+  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button  type="submit" class="btn btn-success" >Get Enrolled StudentList</button>&nbsp;
+    </td>  
+</tr>
+
+</table>
+</form>
+    
+
+<table class="table table-hover table-sm">
+<tr> 
+    <th>RollNo</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Department Id</th>
+</tr>
+<tr *ngFor="let stud of enrolledStudentList">
+    <td>{{stud.rollNo}}</td>
+    <td>{{stud.firstName}}</td>
+    <td>{{stud.lastName}}</td>
+    <td>{{stud.deptId}}</td>
+  
+</tr>
+</table>

@@ -1,0 +1,102 @@
+<div class="container-fluid mb-3">
+    <h1 class="title"><b><i>Enrollment Page</i></b></h1>
+    <form [formGroup]="EnrollmentForm" #EnrollmentDetails (ngSubmit)=onSubmit()>  
+      <table>
+          <tr>
+              <th>Roll Number</th>
+              <td><input type="number" required  class="form-control" name="id" formControlName="rollNo"></td>
+          </tr>
+        <tr>
+            <th>Department</th>
+            <td><select class="custom-select" style="height: 35px" name="department" formControlName="deptId">
+              <option value="">Select Your Department</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <!--<option>Aeronautical Engineering</option>
+              <option>Automobile Engineering</option>
+              <option>Computer Science Engineering</option>
+              <option>Electronics and Communication Engineering</option>
+              <option>Electronics and Instrumentation Engineering</option>
+              <option>Information Technology</option>
+              <option>Production Technology</option> 
+              <option>Mechanical Engineering</option> 
+              <option>Rubber and Plastics Technology</option> -->
+            </select></td>
+          </tr>
+    <tr>
+        <th>Semester</th>
+        <td><select class="custom-select" (change)="getCourseId()" style="height: 35px" name="semester" formControlName="semester">
+          <option value="">Select Your Semester</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          </select></td>
+    </tr>
+  <!-- <tr>
+      <td></td>
+      <td>
+      <button (click)="getCourseId()">Get Courses</button>
+    </td>
+    </tr>  -->
+    <tr>
+        <th>Course Code</th>
+        <td>
+          <select class="custom-select" (change)="getStaffs()" style="height: 35px" name="courseCode" formControlName="courseCode">
+            <option value="">Select Course</option>
+            <option *ngFor="let courseDetailsList of courseDetails">{{courseDetailsList.courseCode}}</option>
+          </select>
+        </td>
+      </tr> 
+       <tr>
+        <th>Staff Id</th>
+        <td>
+          <select class="custom-select" style="height: 35px" name="staffId" formControlName="id">
+            <option value="">Select Staff ID</option>
+            <option *ngFor="let staffCourseAssignDetailsList of staffCourseAssignDetails">{{staffCourseAssignDetailsList}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success" name="afterClick" type="submit">Submit</button>&nbsp;<button class="btn btn-warn" type="reset">Reset</button></td>
+    </tr>
+    </table>
+      </form>
+    </div>
+
+    <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+    [dtTrigger]="dtTrigger">
+      <tr>
+            
+          <th>Staff Id</th>
+          <th>Staff Name</th>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th>Action</th>
+          </tr>
+      <tr>
+            
+            <td>{{staffAssignDetails?.id}}</td>
+            <td>{{staffAssignDetails?.name}}</td>
+            <td>{{courseDetailsList?.courseCode}}</td>
+            <td>{{courseDetailsList?.courseName}}</td>
+            <td><button (click)="addEnrollmentDetails()" class="btn btn-success">Add Course</button></td>
+            <!-- <td><button (click)="deleteCourse(courseDetails.courseCode)" class="btn btn-primary">Delete</button></td>
+            <td><button (click)="updateCourse(courseDetails.courseCode)" class="btn btn-primary">Update</button></td> -->
+      </tr>
+      </table> 
+
+

@@ -1,0 +1,106 @@
+<div class="panel panel-default">
+    <h1 class="title" style="text-align:center"><b><i>Enrollment Details</i></b></h1>
+    <form [formGroup]="EnrollmentViewForm" #timeTableDetails (ngSubmit)="onSubmit()">
+    <table>
+        <tr>
+            <th>Roll Number</th>
+            <td><input type="number" required  class="form-control" name="id" formControlName="rollNo"></td>
+        </tr>
+        <tr>
+            <th>Department</th>
+            <td><select class="custom-select" style="height: 35px" name="department" formControlName="deptId">
+              <option value="">Select Your Department</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <!--<option>Aeronautical Engineering</option>
+              <option>Automobile Engineering</option>
+              <option>Computer Science Engineering</option>
+              <option>Electronics and Communication Engineering</option>
+              <option>Electronics and Instrumentation Engineering</option>
+              <option>Information Technology</option>
+              <option>Production Technology</option> 
+              <option>Mechanical Engineering</option> 
+              <option>Rubber and Plastics Technology</option> -->
+            </select></td>
+          </tr>
+        <tr>
+                <th>Semester</th>
+                <td><select class="custom-select" style="height: 35px" name="semester" formControlName="semester">
+                  <option value="">Select Your Semester</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" type="submit">Submit</button>&nbsp;<button class="btn btn-warn" type="reset">Reset</button></td>
+        </tr>
+    </table>
+</form>
+</div>
+<h4 class="title1"><b><i>TimeTable Details</i></b></h4>
+ <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+    [dtTrigger]="dtTrigger">
+      <tr>
+          <th>Day</th>
+          <th>Period One</th>
+          <th>Period Two</th>
+          <th>Period Three</th>
+          <th>Period Four</th>
+          <th>Period Five</th>
+          <th>Period Six</th>
+          <th>Period Seven</th>
+          <th>Period Eight</th>
+          </tr>
+      <tr *ngFor="let timeTableDetails of timeTableDetailsList">
+            <td>{{timeTableDetails.day}}</td>
+            <td>{{timeTableDetails.periodOne}}</td>
+            <td>{{timeTableDetails.periodTwo}}</td>
+            <td>{{timeTableDetails.periodThree}}</td>
+            <td>{{timeTableDetails.periodFour}}</td>
+            <td>{{timeTableDetails.periodFive}}</td>
+            <td>{{timeTableDetails.periodSix}}</td>
+            <td>{{timeTableDetails.periodSeven}}</td>
+            <td>{{timeTableDetails.periodEight}}</td>
+            <!-- <td><button (click)="deleteCourse(courseDetails.courseCode)" class="btn btn-primary">Delete</button></td>
+            <td><button (click)="updateCourse(courseDetails.courseCode)" class="btn btn-primary">Update</button></td> -->
+      </tr>
+      </table> 
+      <h4 class="title2"><b><i>Enrollment Details</i></b></h4>
+      <form>
+      <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+    [dtTrigger]="dtTrigger">
+      <tr>
+        <th>Roll Number</th>
+          <th>Student Name</th>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th>Staff Id</th>
+          <th>Staff Name</th>
+          </tr>
+      <tr *ngFor="let enrollmentDetails of enrollmentDetailsList">
+            <td>{{enrollmentDetails.rollNo}}</td>
+            <td>{{enrollmentDetails.studentName}}</td>
+            <td>{{enrollmentDetails.courseCode}}</td>
+            <td>{{enrollmentDetails.courseName}}</td>
+            <td>{{enrollmentDetails.id}}</td>
+            <td>{{enrollmentDetails.staffName}}</td>
+            <!-- <td><button (click)="deleteCourse(courseDetails.courseCode)" class="btn btn-primary">Delete</button></td>
+            <td><button (click)="updateCourse(courseDetails.courseCode)" class="btn btn-primary">Update</button></td> -->
+      </tr>
+      </table> 
+      </form>

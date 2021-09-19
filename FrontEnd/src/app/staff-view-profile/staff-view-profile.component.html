@@ -1,0 +1,42 @@
+
+<form [formGroup]="formData" (ngSubmit)="login()">
+    <table class="table table-hover table-sm">
+        <tr>
+            <td><label for="loginId">User Id</label></td>
+            <td><input type="number" value={{id}} required="required"></td>
+          </tr>
+          <tr>
+            <td><input type="submit"  value="Get Details" class="btn btn-success mt-3 mb-3"></td>
+          </tr>
+    </table>
+    </form>
+    
+    
+    <table class="table table-hover table-sm">
+    <tbody>
+        <tr>
+        <th>StaffId</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>DateOfBirth</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Qualification</th>
+        <th>Address</th>
+        <th>ContactNo</th>
+    </tr>
+    <tr >
+      <td>{{staff?.newId}}</td>
+      <td>{{staff?.firstName}}</td>
+      <td>{{staff?.lastName}}</td>
+      <td>{{staff?.dateOfBirth}}</td>
+      <td>{{staff?.email}}</td>
+      <td>{{staff?.gender}}</td>
+      <td>{{staff?.qualification}}</td>
+      <td>{{staff?.address}}</td>
+      <td>{{staff?.contactNo}}</td>
+       
+    </tr>
+    </tbody>
+    </table>
+    

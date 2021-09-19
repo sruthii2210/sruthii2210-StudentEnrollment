@@ -1,0 +1,82 @@
+<div class="container-fluid mb-3">
+    <h1 class="title"><b><i>HOD Update Form</i></b></h1>
+    <form (ngSubmit)="onSubmit()">
+    <table>
+    <tr>
+        <th>First Name</th>
+        <td><input type="text" class="form-control" name="firstName"  [(ngModel)]="hodSignup.firstName" required></td>
+    </tr>
+  
+    <tr>
+        <th><label>Last Name</label></th>
+        <td><input type="text" class="form-control" name="lastName"  [(ngModel)]="hodSignup.lastName" required></td>
+    </tr>
+  
+      <tr>
+        <th><label>Date of Birth</label></th>
+        <td><input type="date" class="form-control" name="dob" [(ngModel)]="hodSignup.dateOfBirth" required></td>
+      </tr>
+  
+      <tr>
+        <th rowspan="2"><label>Gender</label></th>
+        <td>
+          <input type="radio" name="gender" value="Male" [(ngModel)]="hodSignup.gender">
+          <label>Male</label>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="radio" name="gender"  value="Female" [(ngModel)]="hodSignup.gender">
+          <label>Female</label>
+        </td>
+      </tr>
+  
+      <tr>
+        <th>Qualification</th>
+        <td><select class="custom-select" style="height: 35px;" name="qualification" [(ngModel)]="hodSignup.qualification">
+          <option value="" selected>Select ur qualification</option>
+          <option>Ph.D</option>
+          <option>M.Tech</option>
+        </select></td>
+      </tr>
+  
+      <tr>
+        <th><label>Email</label></th>
+       <td><input type="email" class="form-control" name="email" required [(ngModel)]="hodSignup.email"></td>
+      </tr>
+  
+      <tr>
+        <th><label>Contact Number</label></th>
+        <td><input type="tel" class="form-control"  required  name="contactNo"  [(ngModel)]="hodSignup.contactNo"></td>
+      </tr>
+  
+      <tr>
+        <th><label>Address</label></th>
+        <td><textarea rows="5" cols="50" class="form-control" name="address" [(ngModel)]="hodSignup.address"></textarea></td>
+      </tr>
+  
+      <tr>
+        <th>Department</th>
+        <td><select class="custom-select" style="height: 35px" name="department" [(ngModel)]="hodSignup.deptId">
+          <option value="">Select Your Department</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+        </select></td>
+      </tr>
+  
+      <tr>
+        <td></td>
+        <td>
+        <button style="margin-left: 200px;"class="btn btn-success" type="submit">Submit</button>&nbsp;<button class="btn btn-success" type="reset">Reset</button></td>
+    </tr>
+    </table>
+    </form>
+    </div>
+

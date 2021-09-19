@@ -1,0 +1,65 @@
+<div class="container-fluid mb-3">
+    <h1 class="title"><b><i>Student Update Form</i></b></h1>
+    <form (ngSubmit)="onSubmit()">
+        <!--input type="hidden" required  class="form-control" name="id" formControlName="id">-->
+    <table>
+        <!--<tr>
+            <th>HOD ID</th>
+            <td><input type="number" required  class="form-control" name="id" formControlName="id" [(ngModel)]="hodPersonalDetails.id"></td>
+        </tr>-->
+    <tr>
+        <th>First Name</th>
+        <td><input type="text" class="form-control" name="firstName"  [(ngModel)]="studentSignup.firstName" required></td>
+    </tr>
+  
+    <tr>
+        <th><label>Last Name</label></th>
+        <td><input type="text" class="form-control" name="lastName"  [(ngModel)]="studentSignup.lastName" required></td>
+    </tr>
+  
+      <tr>
+        <th><label>Date of Birth</label></th>
+        <td><input type="date" class="form-control" name="dob" [(ngModel)]="studentSignup.dateOfBirth" required></td>
+      </tr>
+  
+      <tr>
+        <th rowspan="2"><label>Gender</label></th>
+        <td>
+          <input type="radio" name="gender" value="Male" [(ngModel)]="studentSignup.gender">
+          <label>Male</label>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <input type="radio" name="gender"  value="Female" [(ngModel)]="studentSignup.gender">
+          <label>Female</label>
+        </td>
+      </tr>
+  
+      <tr>
+        <th><label>Email</label></th>
+       <td><input type="email" class="form-control" name="email" required [(ngModel)]="studentSignup.email"></td>
+      </tr>
+  
+      <tr>
+        <th><label>Contact Number</label></th>
+        <td><input type="tel" class="form-control"  required  name="contactNo"  [(ngModel)]="studentSignup.contactNo"></td>
+      </tr>
+  
+      <tr>
+        <th><label>Address</label></th>
+        <td><textarea rows="5" cols="50" class="form-control" name="address" [(ngModel)]="studentSignup.address"></textarea></td>
+      </tr>
+  
+    
+      <tr>
+        <td></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success" type="submit">Update</button>&nbsp;<button class="btn btn-success" type="reset">Reset</button></td>
+    </tr>
+   
+    </table>
+    </form>
+    </div>
+
+

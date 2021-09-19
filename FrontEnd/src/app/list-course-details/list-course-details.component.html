@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <h1 class="title" style="text-align:center"><b><i>Course Details</i></b></h1>
+    <form [formGroup]="SemesterSearchForm" #semesterDetails (ngSubmit)="onSubmit()">
+    <table>
+        <tr>
+                <th>Semester</th>
+                <td><select class="custom-select" style="height: 35px" name="semester" formControlName="semester">
+                  <option value="">Select Your Semester</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" type="submit">Submit</button>&nbsp;<button class="btn btn-danger" type="reset">Reset</button></td>
+        </tr>
+    </table>
+</form>
+    <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+    [dtTrigger]="dtTrigger">
+      <tr>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th colspan="2" style="text-align: center;">Action</th>
+          </tr>
+      <tr *ngFor="let courseDetails of courseDetailsList">
+            <td>{{courseDetails.courseCode}}</td>
+            <td>{{courseDetails.courseName}}</td>
+            <td><button (click)="deleteCourse(courseDetails.courseCode)" class="btn btn-primary">Delete</button></td>
+            <td><button (click)="updateCourse(courseDetails.courseCode)" class="btn btn-primary">Update</button></td>
+      </tr>
+      </table> 
+    </div>
+   
+

@@ -1,0 +1,58 @@
+
+<h3 style="text-align: center;" class="title"><b><i>Staff Details</i></b></h3>
+<form [formGroup]="StaffList"  (ngSubmit)="onSubmit()">
+<table class="table table-hover table-sm">
+<tr>
+    <th>DeptId</th>
+    <td>
+        <select  class="custom-select" style="height: 35px" name="deptId" formControlName="deptId">
+          <option value="">Select your department</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+        </select>
+    </td>
+</tr>
+
+<!-- <tr>
+    <th>course Code</th>
+    <td>
+        <select (focus)="getCourse()" class="custom-select" style="height: 35px" name="courseCode" formControlName="courseCode">
+          <option value="">Select Course</option>
+          <option *ngFor="let course of courseDetails">{{course}}</option>
+        </select>
+        </td>
+    </tr> -->
+
+<tr>
+  <td></td>
+  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button  type="submit" class="btn btn-success" >Submit</button>&nbsp;
+    </td>  
+</tr>
+
+</table>
+</form>
+    
+
+<table class="table table-hover table-sm">
+<tr> 
+    <th>StaffId</th>
+    <th>StaffName</th>
+    <th>JoiningDate</th>
+    <!-- <th>Last Name</th> -->
+</tr >
+<tr *ngFor="let staff of staffs">
+    <td>{{staff.id}}</td>
+    <td>{{staff.name}}</td>
+    <td>{{staff.joiningDate}}</td>
+</tr>
+</table>
+
+

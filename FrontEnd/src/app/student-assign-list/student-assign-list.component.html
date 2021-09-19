@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <h3 class="title" style="text-align: center;"><b><i>STUDENT DETAILS</i></b></h3>
+    <table  class="table table-hover table-sm" >
+<thead>
+    <tr>  
+        <th> Name</th>  
+        <th> Roll No</th>  
+        <th> Joining Date </th>   
+        <th> DepartmentId</th> 
+    </tr>  
+</thead>  
+<tbody>  
+     <tr *ngFor="let student of studentsAssign ">  
+        <td>{{student.name}}</td>  
+        <td>{{student.rollNo}}</td>  
+        <td>{{student.joiningDate}}</td> 
+        <td>{{DepartmentId}}</td>
+        <!--<td><button (click)="deleteHodDetails(hodPersonalDetails.id)" class="btn btn-primary">Delete</button></td>-->
+        <td><button (click)="updateDetails(student.departmentId,student.rollNo)" class="btn btn-primary">UPDATE</button></td>
+    </tr>
+</tbody>
+    </table>
+    </div>

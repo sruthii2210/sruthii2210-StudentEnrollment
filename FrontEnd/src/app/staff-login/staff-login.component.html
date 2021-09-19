@@ -1,0 +1,48 @@
+<!-- <button class="open-button" onclick="openForm()">Staff Login Form</button> -->
+
+<!-- <div class="form-popup" id="myForm"> -->
+    <div>
+        <h3 style="text-align: center;" class="title"><i>Staff Login Form</i></h3>
+        <form [formGroup]="StaffLoginForm" #StaffLoginDetails (ngSubmit)=saveStaffLogin()>
+          <table>
+        <tr>
+            <th>LoginID</th>
+            <td><input type="number" required  class="form-control" name="id" formControlName="loginId"></td>
+        </tr>
+      
+        <tr>
+            <th>Password</th>
+            <td><input type="password" class="form-control" name="pwd" formControlName="password" required></td>
+        </tr>
+      
+        <tr>
+            <th><label>Confirm Password</label></th>
+            <td><input type="password" class="form-control" name="confirmPwd" formControlName="cpassword" required></td>
+        </tr>
+          <!-- <tr>
+            <td></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" type="submit">Login</button>&nbsp;<button class="btn btn-success" type="reset">Cancel</button></td>
+        </tr> -->
+      
+        <tr>
+      
+          <td></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" class="btn btn-success" >Submit</button>&nbsp;<button type="submit" class="btn btn-danger">Reset</button></td>
+      </tr>
+       
+        </table>
+      </form>
+        <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        <script>
+          function openForm() {
+            document.getElementById("myForm").style.display = "block";
+          }
+          
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+          </script> -->
+        
+        </div>

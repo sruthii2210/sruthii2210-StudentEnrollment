@@ -1,0 +1,70 @@
+<div class="container-fluid mb-3">
+    <h1 class="title"><b><i>Assigning Courses for Staff</i></b></h1>
+     <form [formGroup]="StaffCourseAssignForm" #AssignDetails (ngSubmit)=saveCourseAssignDetails()>  
+      <table>
+        <tr>
+            <th>Department</th>
+            <td><select class="custom-select" style="height: 35px" name="department" formControlName="deptId">
+              <option value="">Select Your Department</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <!--<option>Aeronautical Engineering</option>
+              <option>Automobile Engineering</option>
+              <option>Computer Science Engineering</option>
+              <option>Electronics and Communication Engineering</option>
+              <option>Electronics and Instrumentation Engineering</option>
+              <option>Information Technology</option>
+              <option>Production Technology</option> 
+              <option>Mechanical Engineering</option> 
+              <option>Rubber and Plastics Technology</option> -->
+            </select></td>
+          </tr>
+    <tr>
+        <th>Semester</th>
+        <td><select class="custom-select" (change)="getCourseId()" style="height: 35px" name="semester" formControlName="semester">
+          <option value="">Select Your Semester</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          </select></td>
+    </tr>
+    <tr>
+        <th>Course Code</th>
+        <td>
+          <select class="custom-select" (change)="getStaffs()" style="height: 35px" name="courseCode" formControlName="courseCode">
+            <option value="">Select Course</option>
+            <option *ngFor="let courseDetailsList of courseDetails">{{courseDetailsList.courseCode}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Staff Id</th>
+        <td>
+          <select class="custom-select" style="height: 35px" name="staffId" formControlName="staffId">
+            <option value="">Select Staff ID</option>
+            <option *ngFor="let staffAssignDetailsList of staffAssignDetails">{{staffAssignDetailsList.id}}</option>
+          </select>
+        </td>
+      </tr> 
+      <tr>
+        <td></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success" type="submit">Submit</button>&nbsp;<button class="btn btn-danger" type="reset">Reset</button></td>
+    </tr>
+    </table>
+     </form>
+    </div>
+
+
